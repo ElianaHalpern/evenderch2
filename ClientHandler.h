@@ -11,4 +11,5 @@ class ClientHandler {
 public:
     virtual void handleClient(istream & input, ostream & output) = 0;
 };
+//
 #endif //EVENDERCH2_CLIENTHANDLER_H
