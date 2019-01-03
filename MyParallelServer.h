@@ -15,6 +15,6 @@ public:
 
     virtual void stop() = 0;
 };
-
+//
 
 #endif //EVENDERCH2_PARALLELSERVER_H
