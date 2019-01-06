@@ -7,18 +7,18 @@
 
 #include "CacheManager.h"
 #include "MyTestClientHandler.h"
-#include <map>
+#include <unordered_map>
 #include <string>
 
 using namespace std;
 
 class FileCacheManager {
     MyTestClientHandler *testClient;
-    map<string, string>;
+    unordered_map<string, string> solutions;
 public:
     virtual bool isExist(string &key) = 0;
-    virtual string popSulotion(string &key) = 0;
-    virtual void saveSulotion(string &key, string &val) = 0;
+    virtual string popSolutions(string &key) = 0;
+    virtual void saveSolutions(string &key, string &val) = 0;
 };
 
 
