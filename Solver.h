@@ -9,5 +9,6 @@
 
 class Solver {
     MyTestClientHandler *testClient;
+
 };
 #endif //EVENDERCH2_SOLVER_H
