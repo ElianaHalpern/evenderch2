@@ -7,10 +7,15 @@
 
 
 #include "ClientHandler.h"
+#include "FileCacheManager.h"
+
+using namespace std;
 
 class MyTestClientHandler: public ClientHandler {
+    FileCacheManager *cacheManager;
+
 public:
-    virtual void handleClient(istream & input, ostream & output) = 0;
+    virtual void handleClient(istream & input) = 0;
 };
 
 
