@@ -3,10 +3,15 @@
 //
 
 #include "MySerialServer.h"
-void MySerialServer:: open(int port, ClientHandler c){
+
+void MySerialServer:: open(int port, ClientHandler* c){
 
 }
 
 void MySerialServer:: stop(){
+
+}
+
+bool MySerialServer:: isOpen(){
 
 }

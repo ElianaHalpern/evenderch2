@@ -4,7 +4,7 @@
 
 #include "MyTestClientHandler.h"
 
-void MyTestClientHandler:: handleClient(istream & input){
+void MyTestClientHandler:: handleClient(string buffer){
     string line;
     getline(std::cin, line);
     if (this->cacheManager->isExist(line)) {

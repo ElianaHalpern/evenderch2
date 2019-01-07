@@ -7,12 +7,17 @@
 
 #include "Server.h"
 #include "ClientHandler.h"
+
 using namespace server_side;
-class MySerialServer: public Server {
+using namespace std;
+
+class MySerialServer : public Server {
 public:
-    virtual void open(int port, ClientHandler c) = 0;
+    virtual void open(int port, ClientHandler *c) = 0;
 
     virtual void stop() = 0;
+
+    virtual bool isOpen()= 0;
 };
 
 

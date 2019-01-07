@@ -4,15 +4,15 @@
 
 #include "FileCacheManager.h"
 
-bool FileCacheManager:: isExist(string &key){
-    auto search = solutions.find(key);
+bool FileCacheManager:: isExist(string problem){
+    auto search = solutions.find(problem);
     return search != solutions.end();
 }
 
-string FileCacheManager:: popSolutions(string &key){
-    return solutions.at(key);
+string FileCacheManager:: popSolutions(string problem){
+    return solutions.at(problem);
 }
 
-void FileCacheManager:: saveSolutions(string &key, string &val){
-    solutions.insert(key, val);
+void FileCacheManager:: saveSolutions(string problem, string solution){
+    solutions.insert(problem, solution);
 }

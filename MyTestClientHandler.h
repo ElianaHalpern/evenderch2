@@ -7,15 +7,21 @@
 
 
 #include "ClientHandler.h"
-#include "FileCacheManager.h"
+#include "Solver.h"
+#include "CacheManager.h"
 
 using namespace std;
 
-class MyTestClientHandler: public ClientHandler {
-    FileCacheManager *cacheManager;
-
+class MyTestClientHandler : public ClientHandler {
+private:
+    Solver<string, string> *solver;
+    CacheManager<string, string> *cacheManager;
 public:
-    virtual void handleClient(istream & input) = 0;
+    MyTestClientHandler(Solver<string, string> *s, CacheManager<string, string> *c) {
+        this->solver = s;
+        this->cacheManager = c;
+    }
+    virtual void handleClient(string buffer) = 0;
 };
 
 

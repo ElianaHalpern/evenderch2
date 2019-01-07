@@ -12,13 +12,12 @@
 
 using namespace std;
 
-class FileCacheManager {
-    MyTestClientHandler *testClient;
+class FileCacheManager: public CacheManager<std::string, std::string>{
     unordered_map<string, string> solutions;
 public:
-    virtual bool isExist(string &key) = 0;
-    virtual string popSolutions(string &key) = 0;
-    virtual void saveSolutions(string &key, string &val) = 0;
+    virtual bool isExist(string problem) = 0;
+    virtual string popSolutions(string problem) = 0;
+    virtual void saveSolutions(string problem, string solution) = 0;
 };
 
 

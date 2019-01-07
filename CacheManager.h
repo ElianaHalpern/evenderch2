@@ -7,14 +7,14 @@
 
 #include <string>
 
-template<class Problem, class Solution>
 using namespace std;
+template<class Problem, class Solution>
 
 class CacheManager {
 public:
-    virtual bool isExist(Problem key) = 0;
-    virtual string popSulotion(string key) = 0;
-    virtual void saveSulotion(string key, string val) = 0;
+    virtual bool isExist(Problem problem) = 0;
+    virtual string popSulotion(Problem problem) = 0;
+    virtual void saveSulotion(Problem problem, Solution solution) = 0;
 };
 
 #endif //EVENDERCH2_CACHEMANAGER_H

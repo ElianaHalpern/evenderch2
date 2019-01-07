@@ -4,10 +4,14 @@
 
 #include "MyParallelServer.h"
 
-void MyParallelServer:: open(int port, ClientHandler c){
+void MyParallelServer:: open(int port, ClientHandler* c){
 
 }
 
 void MyParallelServer:: stop(){
+
+}
+
+bool MyParallelServer:: isOpen(){
 
 }
