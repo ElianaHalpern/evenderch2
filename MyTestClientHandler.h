@@ -9,6 +9,7 @@
 #include "ClientHandler.h"
 #include "Solver.h"
 #include "CacheManager.h"
+#include <iostream>
 
 using namespace std;
 
@@ -21,7 +22,8 @@ public:
         this->solver = s;
         this->cacheManager = c;
     }
-    virtual void handleClient(string buffer) = 0;
+
+    virtual string handleClient(string buffer) = 0;
 };
 
 

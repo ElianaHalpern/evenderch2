@@ -7,8 +7,10 @@
 
 #include <iostream>
 
+using namespace std;
+
 class ClientHandler {
 public:
-    virtual void handleClient(string buffer) = 0;
+    virtual string handleClient(string buffer) = 0;
 };
 #endif //EVENDERCH2_CLIENTHANDLER_H

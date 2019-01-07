@@ -12,7 +12,14 @@
  * @return input reversed
  */
 string StringReverser::solve(string input) {
-    string temp = input;
-    reverse(temp.begin(), temp.end());
-    return temp;
+    string temp;
+    for (string::iterator it = input.begin(); it != input.end(); ++it) {
+        if (*it == '\n' || *it == '\r' || *it == '\0') {
+            continue;
+        }
+        temp += *it;
+    }
+    string answer = temp;
+    reverse(answer.begin(), answer.end());
+    return answer;
 }

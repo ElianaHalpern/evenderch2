@@ -4,12 +4,21 @@
 
 #include "MyTestClientHandler.h"
 
-void MyTestClientHandler:: handleClient(string buffer){
-    string line;
-    getline(std::cin, line);
-    if (this->cacheManager->isExist(line)) {
-        string s = this->cacheManager->popSolutions(line);
-        cout << s << endl;
+string MyTestClientHandler:: handleClient(string buffer){
+    string line = buffer;
+    if (line != "end") {
+        if (this->cacheManager->isExist(line)) {
+            cout.flush();
+            return this->cacheManager->popSolution(line);
+        } else {
+            string solution;
+            solution = this->solver->solve(line);
+            this->cacheManager->saveSolution(line, solution);
+            cout.flush();
+            return solution;
+        }
+    } else {
+        cout.flush();
+        return nullptr;
     }
-    this->cacheManager->saveSolutions();
 }
