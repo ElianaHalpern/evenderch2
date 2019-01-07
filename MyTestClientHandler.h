@@ -23,7 +23,7 @@ public:
         this->cacheManager = c;
     }
 
-    virtual string handleClient(string buffer) = 0;
+    string handleClient(string buffer);
 };
 
 

@@ -13,11 +13,11 @@ using namespace std;
 
 class MySerialServer : public Server {
 public:
-    virtual void open(int port, ClientHandler *c) = 0;
+    void open(int port, ClientHandler *c);
 
-    virtual void stop() = 0;
+    void stop();
 
-    virtual bool isOpen()= 0;
+    bool isOpen();
 };
 
 

@@ -20,15 +20,10 @@ using namespace server_side;
 class FileCacheManager: public CacheManager<std::string, std::string>{
     unordered_map<string, string> solutions;
 
-    FileCacheManager:: FileCacheManager() {
-        //Default behaviour- loading file to solutions map only once
-        loadFileToMap();
-    }
-
 public:
-    virtual bool isExist(string problem) = 0;
-    virtual string popSolution(string problem) = 0;
-    virtual void saveSolution(string problem, string solution) = 0;
+    virtual bool isExist(string problem);
+    virtual string popSolution(string problem);
+    virtual void saveSolution(string problem, string solution);
     virtual void saveToFile(unordered_map<string, string> solutions);
     virtual void loadFileToMap();
 };
