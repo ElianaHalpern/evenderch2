@@ -14,12 +14,11 @@ using namespace std;
 
 class MyParallelServer: public Server {
 public:
-    virtual void open(int port, ClientHandler c) = 0;
+    virtual void open(int port, ClientHandler* c) = 0;
 
     virtual void stop() = 0;
 
     virtual bool isOpen()= 0;
 };
-//
 
 #endif //EVENDERCH2_PARALLELSERVER_H
