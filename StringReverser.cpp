@@ -4,22 +4,15 @@
 
 #include <bits/stdc++.h>
 #include <algorithm>
-#include "StringReverse.h"
+#include "StringReverser.h"
+
 /**
  * return a reversed string.
  * @param input .
  * @return input reversed
  */
-string StringReverse::solve(string input) {
-//    string reversedString = "";
-//
-//    for (int i = input.size() - 1; i >= 0; i--) {
-//        reversedString += input[i];
-//    }
-//    return reversedString;
+string StringReverser::solve(string input) {
     string temp = input;
     reverse(temp.begin(), temp.end());
     return temp;
-
-
 }

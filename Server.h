@@ -7,11 +7,16 @@
 
 #include "ClientHandler.h"
 
-class Server {
-public:
-    virtual void open(int port, ClientHandler c) = 0;
+namespace server_side {
 
-    virtual void stop() = 0;
-};
+    class Server {
+    public:
+
+        virtual void open(int port, ClientHandler *clientHandler) = 0;
+
+        virtual void stop() = 0;
+    };
+}
+
 
 #endif //EVENDERCH2_SERVER_H

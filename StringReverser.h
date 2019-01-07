@@ -7,12 +7,11 @@
 
 
 #include "Solver.h"
+
 using namespace std;
 
-class StringReverse : public Solver{
-public:
-    virtual string solve(string input);
-
+class StringReverser : public Solver<string, string> {
+    string solve(string problem);
 };
 
 

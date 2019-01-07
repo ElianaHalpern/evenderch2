@@ -9,6 +9,6 @@
 
 class ClientHandler {
 public:
-    virtual void handleClient(istream & input, ostream & output) = 0;
+    virtual void handleClient(string buffer) = 0;
 };
 #endif //EVENDERCH2_CLIENTHANDLER_H

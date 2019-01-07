@@ -7,11 +7,12 @@
 
 #include <string>
 
+template<class Problem, class Solution>
 using namespace std;
 
 class CacheManager {
 public:
-    virtual bool isExist(string key) = 0;
+    virtual bool isExist(Problem key) = 0;
     virtual string popSulotion(string key) = 0;
     virtual void saveSulotion(string key, string val) = 0;
 };

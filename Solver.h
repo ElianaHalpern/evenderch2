@@ -5,10 +5,10 @@
 #ifndef EVENDERCH2_SOLVER_H
 #define EVENDERCH2_SOLVER_H
 
-#include "MyTestClientHandler.h"
-
+template<class Problem, class Solution>
 class Solver {
-    MyTestClientHandler *testClient;
-
+public:
+    virtual Solution solve(Problem p) = 0;
 };
+
 #endif //EVENDERCH2_SOLVER_H

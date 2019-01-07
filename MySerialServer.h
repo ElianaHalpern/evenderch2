@@ -7,7 +7,7 @@
 
 #include "Server.h"
 #include "ClientHandler.h"
-
+using namespace server_side;
 class MySerialServer: public Server {
 public:
     virtual void open(int port, ClientHandler c) = 0;
