@@ -15,6 +15,7 @@ namespace boot {
         int main(int argc, char *argv[]) {
             Solver<string, string> *solver = new StringReverser();
             CacheManager<string, string> *cacheManager = new FileCacheManager();
+            cacheManager->loadFileToMap();
             Server *server = new MySerialServer();
             ClientHandler *clientHandler = new MyTestClientHandler(solver, cacheManager);
             server->open(stoi(argv[0]), clientHandler);
