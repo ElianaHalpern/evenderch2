@@ -6,11 +6,11 @@
 #define EVENDERCH2_STATE_H
 
 template<class T>
-class State <T> {
+class State {
 public:
     T state;
     double cost;
-    State<T> cameFrom; // the state we came from to this state (setter)
+    State cameFrom;
 
     State(T state) {
         this->state = state;
