@@ -7,10 +7,12 @@
 
 #include "Searchable.h"
 
-template<class Problem, class Solution>
+using namespace std;
+template<class T>
+
 class Searcher{
 
-    virtual Solution search (Searchable searchable) = 0;
+    virtual vector<State<T>> search (Searchable<T> searchable) = 0;
 
     virtual int getNumberOfNodesEvaluated() = 0;
 };

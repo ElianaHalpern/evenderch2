@@ -7,17 +7,18 @@
 
 template<class T>
 class State {
-public:
+private:
     T state;
     double cost;
-    State cameFrom;
+    State<T>* cameFrom;
 
+public:
     State(T state) {
         this->state = state;
     }
 
     virtual bool Equals(State<T> s){
-        return state.Equals(s.state);
+        return (this->state == s.state);
     }
 };
 

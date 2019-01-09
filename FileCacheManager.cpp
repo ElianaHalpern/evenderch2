@@ -4,19 +4,22 @@
 
 #include "FileCacheManager.h"
 
-bool FileCacheManager::isExist(string problem) {
-    auto search = this->solutions.find(problem);
-    return search != this->solutions.end();
+template<class Problem, class Solution>
+bool FileCacheManager::isExist(Problem problem) {
+    return this->solutions.count(problem) > 0;;
 }
 
-string FileCacheManager::popSolution(string problem) {
+template<class Problem, class Solution>
+Solution FileCacheManager::popSolution(Problem problem) {
     return this->solutions.at(problem);
 }
 
-void FileCacheManager::saveSolution(string problem, string solution) {
+template<class Problem, class Solution>
+void FileCacheManager::saveSolution(Problem problem, Solution solution) {
     solutions.insert(make_pair(problem, solution));
 }
 
+template<class Problem, class Solution>
 void FileCacheManager::loadFileToMap() {
     ifstream solutionsFile;
     string line;
@@ -34,26 +37,14 @@ void FileCacheManager::loadFileToMap() {
     }
 }
 
-void FileCacheManager::saveToFile(unordered_map<string, string> solutions) {
-    int solutionsRow = solutions.size();
-    int solutionsClo = 3;
-    string solutionsArr[solutionsRow][solutionsClo];
-
-    std::unordered_map<string, string>::iterator it;
-    int i = 0;
-    for (it = solutions.begin(); it != solutions.end(); it++) {
-        solutionsArr[i][0] = it->first;
-        solutionsArr[i][1] = '$';
-        solutionsArr[i][2] = it->second;
-    }
+template<class Problem, class Solution>
+void FileCacheManager::saveToFile(unordered_map<Problem, Solution> solutions) {
     ofstream myFile;
     myFile.open("Solutions.txt");
     if (myFile.is_open()) {
-        for (int i = 0; i < solutionsRow; i++) {
-            for (int j = 0; j < solutionsClo; j++) {
-                myFile << solutionsArr[i][j];
-            }
-            myFile << "\n";
+        std::unordered_map<Problem, Solution>::iterator it;
+        for (it = solutions.begin(); it != solutions.end(); it++) {
+            myFile << it->first << '$' << it->second << endl;
         }
         myFile.close();
     } else {
