@@ -9,13 +9,12 @@
 #include <unordered_map>
 
 using namespace std;
-template<class Problem, class Solution>
 
 class CacheManager {
 public:
-    virtual bool isExist(Problem problem) = 0;
-    virtual string popSolution(Problem problem) = 0;
-    virtual void saveSolution(Problem problem, Solution solution) = 0;
+    virtual bool isExist(string problem) = 0;
+    virtual string popSolution(string problem) = 0;
+    virtual void saveSolution(string problem, string solution) = 0;
     virtual void saveToFile(unordered_map<string, string> solutions);
     virtual void loadFileToMap();
 };

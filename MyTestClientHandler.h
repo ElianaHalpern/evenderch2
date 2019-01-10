@@ -12,18 +12,19 @@
 #include <iostream>
 
 using namespace std;
+template <class T>
 
 class MyTestClientHandler : public ClientHandler {
-private:
-    Solver<string, string> *solver;
-    CacheManager<string, string> *cacheManager;
 public:
-    MyTestClientHandler(Solver<string, string> *s, CacheManager<string, string> *c) {
+    Solver<T> *solver;
+    CacheManager *cacheManager;
+
+    MyTestClientHandler(Solver<T> *s, CacheManager *c) {
         this->solver = s;
         this->cacheManager = c;
     }
 
-    string handleClient(string buffer);
+    string handleClient(int socket) override;
 };
 
 

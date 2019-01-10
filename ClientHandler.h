@@ -11,6 +11,6 @@ using namespace std;
 
 class ClientHandler {
 public:
-    virtual string handleClient(string buffer) = 0;
+    virtual string handleClient(int socket) = 0;
 };
 #endif //EVENDERCH2_CLIENTHANDLER_H

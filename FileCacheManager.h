@@ -16,16 +16,15 @@
 
 using namespace std;
 using namespace server_side;
-template<class Problem, class Solution>
 
-class FileCacheManager: public CacheManager<Problem, Solution>{
+class FileCacheManager: public CacheManager{
     unordered_map<string, string> solutions;
 
 public:
-    virtual bool isExist(Problem problem);
-    virtual Solution popSolution(Problem problem);
-    virtual void saveSolution(Problem problem, Solution solution);
-    virtual void saveToFile(unordered_map<Problem, Solution> solutions);
+    virtual bool isExist(string problem);
+    virtual string popSolution(string problem);
+    virtual void saveSolution(string problem, string solution);
+    virtual void saveToFile(unordered_map<string, string> solutions);
     virtual void loadFileToMap();
 };
 

@@ -4,21 +4,22 @@
 
 #include "MyTestClientHandler.h"
 
-string MyTestClientHandler:: handleClient(string buffer){
+string MyTestClientHandler::handleClient(int socket) {
     string line = buffer;
+    string problem = "";
+    string solution = "";
+    //לולאה של קריאת שורה מהבאםר כל פעם
     if (line != "end") {
-        if (this->cacheManager->isExist(line)) {
-            cout.flush();
-            return this->cacheManager->popSolution(line);
-        } else {
-            string solution;
-            solution = this->solver->solve(line);
-            this->cacheManager->saveSolution(line, solution);
-            cout.flush();
-            return solution;
-        }
-    } else {
-        cout.flush();
-        return nullptr;
+        problem += line;
     }
+    cout.flush();
+    //מסתיימת הלולאה של הבאפר
+
+    if (this->cacheManager->isExist(problem)) {
+        solution = this->cacheManager->popSolution(problem);
+    } else {
+        solution = this->solver->solve(problem);
+        this->cacheManager->saveSolution(problem, solution);
+    }
+    return solution;
 }

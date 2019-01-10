@@ -3,7 +3,8 @@
 #include "Server.h"
 #include "CacheManager.h"
 #include "MySerialServer.h"
-#include "StringReverser.h"
+#include "MatrixSolver.h"
+#include "Point.h"
 #include "FileCacheManager.h"
 #include "MyTestClientHandler.h"
 
@@ -13,8 +14,8 @@ namespace boot {
     class Main {
     public:
         int main(int argc, char *argv[]) {
-            Solver<string, string> *solver = new StringReverser();
-            CacheManager<string, string> *cacheManager = new FileCacheManager();
+            Solver<Point> *solver = new MatrixSolver();
+            CacheManager*cacheManager = new FileCacheManager();
             cacheManager->loadFileToMap();
             Server *server = new MySerialServer();
             ClientHandler *clientHandler = new MyTestClientHandler(solver, cacheManager);
