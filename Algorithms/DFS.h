@@ -8,10 +8,9 @@
 
 #include "Searcher.h"
 using namespace std;
-template <class T>
 
-class DFS: public Searcher<T> {
-    vector<State<T>> search (Searchable<T> searchable);
+class DFS: public Searcher {
+    string search(Searchable<State<std::pair<int, int>>> searchable);
 
     int getNumberOfNodesEvaluated();
 };

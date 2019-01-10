@@ -6,11 +6,12 @@
 #define EVENDERCH2_CLIENTHANDLER_H
 
 #include <iostream>
+#include "Server.h"
 
-using namespace std;
-
-class ClientHandler {
-public:
-    virtual string handleClient(int socket) = 0;
+namespace server_side {
+    class ClientHandler {
+    public:
+        virtual void handleClient(int socket) = 0;
+    };
 };
 #endif //EVENDERCH2_CLIENTHANDLER_H

@@ -8,7 +8,7 @@
 
 #include <string>
 #include "Solver.h"
-#include "Matrix.h"
+#include "Algorithms/MatrixSearchable.h"
 #include "Lexer.h"
 
 template<class T>
@@ -19,7 +19,7 @@ public:
 
     virtual string solve(string problem) {
         //לשנות קודם מטריצה ואז גדלים. 2 לולאות נפרדות
-        Matrix<T> matrix = new Matrix<T>();
+        MatrixSearchable<T> matrix = new MatrixSearchable<T>();
         vector<string> linesFromClient;
         linesFromClient = Lexer::splitByLines(problem, '\n');
         matrix.setSize(stoi(linesFromClient.at(0)));

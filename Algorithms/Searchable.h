@@ -6,14 +6,13 @@
 #define EVENDERCH2_SEARCHABLE_H
 
 #include <vector>
-#include "State.h"
 
 using namespace std;
 template <class T>
 
 class Searchable {
-    virtual State<T>* getInitialState();
-    virtual State<T>* getGoalState();
-    vector<State<T>*> getAllPossibleStates(State<T> s);
+    virtual T getInitialState();
+    virtual T getGoalState();
+    virtual vector<T> getAllPossibleStates(T);
 };
 #endif //EVENDERCH2_SEARCHABLE_H

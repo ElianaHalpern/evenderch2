@@ -4,22 +4,19 @@
 
 #include "FileCacheManager.h"
 
-template<class Problem, class Solution>
-bool FileCacheManager::isExist(Problem problem) {
+bool server_side::FileCacheManager::isExist(std::string problem) {
     return this->solutions.count(problem) > 0;;
 }
 
-template<class Problem, class Solution>
-Solution FileCacheManager::popSolution(Problem problem) {
+std::string server_side::FileCacheManager::popSolution(std::string problem) {
     return this->solutions.at(problem);
 }
 
-template<class Problem, class Solution>
-void FileCacheManager::saveSolution(Problem problem, Solution solution) {
+void server_side::FileCacheManager::saveSolution(std::string problem, std::string solution) {
     solutions.insert(make_pair(problem, solution));
 }
 
-template<class Problem, class Solution>
+/**
 void FileCacheManager::loadFileToMap() {
     ifstream solutionsFile;
     string line;
@@ -52,3 +49,4 @@ void FileCacheManager::saveToFile(unordered_map<Problem, Solution> solutions) {
         return;
     }
 }
+ **/

@@ -1,12 +1,12 @@
 #include <iostream>
 #include "Solver.h"
-#include "Server.h"
-#include "CacheManager.h"
+#include "server/Server.h"
+#include "server/CacheManager.h"
 #include "MySerialServer.h"
 #include "MatrixSolver.h"
 #include "Point.h"
-#include "FileCacheManager.h"
-#include "MyTestClientHandler.h"
+#include "server/FileCacheManager.h"
+#include "server/MyTestClientHandler.h"
 
 using namespace std;
 

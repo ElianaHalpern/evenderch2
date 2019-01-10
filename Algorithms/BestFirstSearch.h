@@ -9,10 +9,9 @@
 #include "Searcher.h"
 
 using namespace std;
-template <class T>
 
-class BestFirstSearch: public Searcher<T> {
-    vector<State<T>> search (Searchable<T> searchable);
+class BestFirstSearch: public Searcher {
+    string search(Searchable<State<std::pair<int, int>>> searchable);
 
     int getNumberOfNodesEvaluated();
 };

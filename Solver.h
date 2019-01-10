@@ -5,14 +5,13 @@
 #ifndef EVENDERCH2_SOLVER_H
 #define EVENDERCH2_SOLVER_H
 
-#include "Searcher.h"
+#include "Algorithms/Searcher.h"
 
-template <class T>
+template <class Problem, class Soultion>
 
 class Solver {
 public:
-    Searcher<T> s;
-    virtual string solve(string problem) = 0; //יבנה ממבר של searcheble
+    virtual std::string solve(std::string problem) = 0; //יבנה ממבר של searcheble
 };
 
 #endif //EVENDERCH2_SOLVER_H
