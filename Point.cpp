@@ -11,6 +11,7 @@ int Point:: getPointY(){
     return this->y;
 }
 
+
 void Point::setX(int x) {
     Point::x = x;
 }

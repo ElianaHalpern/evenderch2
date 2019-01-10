@@ -14,6 +14,26 @@ template<class T>
 class Matrix : public Searchable<T> {
 public:
     vector<vector<State<Point>>> matrix;
+    int size;
+    Point start;
+
+    void setStart(const Point &start) {
+        Matrix::start = start;
+    }
+
+    void setPoint(int x, int y) {
+
+    }
+
+    void setGoal(const Point &goal) {
+        Matrix::goal = goal;
+    }
+
+    Point goal;
+
+    void setSize(int size) {
+        Matrix::size = size;
+    }
 
     void setMatrix(const vector<vector<State<T>>> &matrix) {
         Matrix::matrix = matrix;

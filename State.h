@@ -10,6 +10,33 @@ class State {
 private:
     T state;
     double cost;
+public:
+    T getState() const {
+        return state;
+    }
+
+    double getCost() const {
+        return cost;
+    }
+
+    State<T> *getCameFrom() const {
+        return cameFrom;
+    }
+
+public:
+    void setState(T state) {
+        State::state = state;
+    }
+
+    void setCost(double cost) {
+        State::cost = cost;
+    }
+
+    void setCameFrom(State<T> *cameFrom) {
+        State::cameFrom = cameFrom;
+    }
+
+private:
     State<T>* cameFrom;
 
 public:
