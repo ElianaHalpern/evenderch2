@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Solver.h"
+#include "Data/Solver.h"
 #include "server/Server.h"
 #include "server/CacheManager.h"
 #include "MySerialServer.h"
-#include "MatrixSolver.h"
+#include "Data/MatrixSolver.h"
 #include "Point.h"
 #include "server/FileCacheManager.h"
 #include "server/MyTestClientHandler.h"

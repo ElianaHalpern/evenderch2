@@ -7,7 +7,7 @@
 
 
 #include "ClientHandler.h"
-#include "../Solver.h"
+#include "../Data/Solver.h"
 #include "CacheManager.h"
 
 namespace server_side {

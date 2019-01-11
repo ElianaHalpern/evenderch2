@@ -8,7 +8,7 @@
 
 #include <string>
 #include "Solver.h"
-#include "Algorithms/MatrixSearchable.h"
+#include "../Algorithms/MatrixSearchable.h"
 #include "Lexer.h"
 
 template<class T>
