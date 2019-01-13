@@ -4,6 +4,7 @@
 
 #include "MatrixSearchable.h"
 
+//jhgk
 State<pair<int,int>> MatrixSearchable:: getInitialState(){
     return this->start;
 }
